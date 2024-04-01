@@ -12,7 +12,7 @@ dp = Dispatcher()
 
 @dp.message_handler(Command('start'))
 async def start(message: types.Message, state: FSMContext):
-    item1 = KeyboardButton(text="Вибрати товар", web_app=WebAppInfo(url='https://andrewkryvenko.github.io/dyplom2.github.io//'))
+    item1 = KeyboardButton(text="Вибрати товар", web_app=WebAppInfo(url='https://andrewkryvenko.github.io/dyplom23.github.io/'))
     keyboard = ReplyKeyboardMarkup(keyboard=[[item1]], resize_keyboard=True)
     await bot.send_message(message.from_user.id,"Вітаємо! 🙌🏼\n Натисність на кнопку МЕНЮ знизу зліва щоб замовити їжу👇🏼", reply_markup=keyboard, parse_mode="Markdown")
 
