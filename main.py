@@ -3,16 +3,14 @@ import json
 from aiogram import types
 from aiogram.dispatcher.filters import CommandStart
 from aiogram import Bot, Dispatcher
-from aiogram.dispatcher.filters import Command
 
 bot = Bot(token="6442089419:AAG4q9RlLlpJ7w4HEKusOqTXUA18MSMaK_w")
 dp = Dispatcher(bot)
 
 @dp.message_handler(CommandStart())
 async def start(message: types.Message):
-    item1 = types.KeyboardButton(text="Выбрать товар", url='https://andrewkryvenko.github.io/dyplom23.github.io/')
-    keyboard = types.ReplyKeyboardMarkup(keyboard=[[item1]], resize_keyboard=True)
-    await message.answer("Вітаємо! 🙌🏼\n Натисність на кнопку МЕНЮ знизу зліва щоб замовити їжу👇🏼", reply_markup=keyboard, parse_mode="Markdown")
+    keyboard = types.ReplyKeyboardMarkup(keyboard=[["Выбрать товар"]], resize_keyboard=True)
+    await message.answer("Вітаємо! 🙌🏼\n Натисніть на кнопку 'Выбрать товар' внизу, чтобы замовити їжу👇🏼", reply_markup=keyboard, parse_mode="Markdown")
 
 
 @dp.message_handler()
